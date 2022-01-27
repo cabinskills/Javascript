@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Constructor</title>
+    <script>
+        function Person(firstname, lastname) {
+            console.log(this);
+            this.firstname = firstname;
+            this.lastname = lastname;
+            console.log('This function is invoked.');
+        }
+
+        var john = new Person('John', 'Doe');
+        console.log(john);
+
+        var jane = new Person('Jane', 'Doe');
+        console.log(jane);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

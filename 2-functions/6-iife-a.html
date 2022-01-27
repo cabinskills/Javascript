@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE 1</title>
+    <script>
+        // Function statement
+        function greet(name) {
+            console.log('Hello ' + name);
+        }
+        greet('Peter');
+
+        // Using a function expression
+        var greetFunc = function(name) {
+            console.log('Hello ' + name);
+        };
+        greetFunc('Peter');
+
+        // Using an Immediately Invoked Function Expression (IIFE)
+        // Method 1
+        var greeting = function(name) {
+
+            return 'Hello ' + name;
+
+        }('Peter');
+
+        console.log(greeting);
+
+        // Using an Immediately Invoked Function Expression (IIFE)
+        // Method 2
+        var firstname = 'Peter';
+        (function(name) {
+
+            var greeting = 'Inside IIFE Hello!';
+            console.log(greeting + ' ' + name);
+
+        }(firstname));
+
+        // Using an Immediately Invoked Function Expression (IIFE)
+        // Method 3
+        (function(global, name) {
+
+            var greeting = 'Hello';
+            global.greeting = 'Hello';
+            console.log(greeting + ' ' + name);
+
+        }(window, 'Peter'));
+
+        console.log(greeting);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

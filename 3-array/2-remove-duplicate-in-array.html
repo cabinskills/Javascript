@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicate in Array</title>
+    <script>
+        // Remove duplicate elements - Using Set
+        const languages = ['javascript', 'python', 'java', 'python', 'php', 'python', 'reactjs'];
+        const fruits = ['apple', 'orange', 'apple', 'banana', 'graphs', 'apple', 'orange'];
+        const removeDuplicate = [...new Set(languages)];
+        console.log(removeDuplicate);
+
+        // Remove duplicate array elements for all array variables in the document - Using Set
+        Array.prototype.unique = function() {
+            return Array.from(new Set(this));
+        };
+        console.log(languages.unique());
+        console.log(fruits.unique());
+
+
+        // Remove duplicate elements - Using Filter
+        const removeDuplicate1 = languages.filter((value, index) => languages.indexOf(value) === index);
+        console.log(removeDuplicate1);
+
+        // To get duplicate elements in array
+        const removeDuplicate2 = languages.filter((value, index) => languages.indexOf(value) !== index);
+        console.log(removeDuplicate2);
+
+        // Remove duplicate elements - Using forEach
+        function _removeDuplicate(arr) {
+            let uniquedata = [];
+            arr.forEach(element => {
+                if (!uniquedata.includes(element)) {
+                    uniquedata.push(element);
+                }
+            });
+            return uniquedata;
+        }
+        console.log(_removeDuplicate(languages));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

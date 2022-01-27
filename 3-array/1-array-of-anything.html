@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Anything</title>
+    <script>
+        var arr = [
+            1,
+            false, {
+                name: 'Sundhar',
+                address: '87, Main Street'
+            },
+            function(name) {
+                var greeting = 'Hello ';
+                console.log(greeting + name);
+            },
+            "hello"
+        ];
+
+        console.log(arr);
+        arr[3](arr[2].name);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Object and this</title>
+    <script>
+        function a() {
+            console.log(this);
+            this.newvariable = 'hello';
+        }
+
+        var b = function() {
+            console.log(this);
+        }
+
+        a();
+
+        console.log(newvariable); // not good!
+
+        b();
+
+        var c = {
+            name: 'The c object',
+            log: function() {
+                var self = this;
+
+                self.name = 'Updated c object';
+                console.log(self);
+
+                var setname = function(newname) {
+                    self.name = newname;
+                }
+                setname('Updated again! The c object');
+                console.log(self);
+            }
+        }
+
+        c.log();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

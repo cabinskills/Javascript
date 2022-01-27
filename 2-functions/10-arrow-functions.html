@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference between normal function and arrow function</title>
+</head>
+
+<body>
+    <p>Difference between normal function and arrow function</p>
+</body>
+<script>
+    let user = {
+        name: "GFG",
+        gfg1: () => {
+            console.log("hello " + this.name); // no 'this' binding here
+        },
+        gfg2() {
+            console.log("Welcome to " + this.name); // 'this' binding works here
+        }
+    };
+    user.gfg1();
+    user.gfg2();
+
+
+    // Arguments objects are not available in arrow functions, but are available in regular functions.
+    let newuser = {
+        show() {
+            console.log(arguments);
+        },
+        showme: () => {
+            console.log(arguments);
+        }
+    };
+    newuser.show(1, 2, 3);
+    //newuser.showme(1, 2, 3); // It will throw error : arguments is not defined
+
+
+    /* Regular functions created using function declarations or expressions are ‘constructible’ and ‘callable’. 
+    Since regular functions are constructible, they can be called using the ‘new’ keyword. 
+    However, the arrow functions are only ‘callable’ and not constructible. 
+    Thus, we will get a run-time error on trying to construct a non-constructible arrow functions using the new keyword. */
+    let x = function() {
+        console.log(arguments);
+    };
+    new x(1, 2, 3);
+
+    let y = () => {
+        console.log(arguments);
+    };
+    //new y(1, 2, 3); // Error : y is not a constructor
+</script>
+
+</html>

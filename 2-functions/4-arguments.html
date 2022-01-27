@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arguments</title>
+    <script>
+        function greet(firstname, lastname, language) {
+            language = language || 'en';
+            if (arguments.length === 0) {
+                console.log('Missing parameters!');
+                console.log('-------------');
+                return;
+            }
+
+            console.log(firstname);
+            console.log(lastname);
+            console.log(language);
+            console.log(arguments);
+            console.log('arg 0: ' + arguments[0]);
+            console.log('-------------');
+
+        }
+
+        greet();
+        greet('Peter');
+        greet('Peter', 'Hari');
+        greet('Peter', 'Hari', 'es');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

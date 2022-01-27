@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let employees = [{
+        "id": 11,
+        "name": "Abhinav",
+        "salary": 75000
+    }, {
+        "id": 2131,
+        "name": "Raj",
+        "salary": 62000
+    }, {
+        "id": 3012,
+        "name": "Raj",
+        "salary": 32000
+    }]
+
+    const myfunction = emp => emp.id
+
+    function myFun(emp) {
+        return emp.id;
+    }
+
+    //let idsArray = employees.map(employee => employee.id)
+
+    let idsArray = employees.map(myFun);
+
+
+    console.log(idsArray) //[11,2131,3012]
+</script>
+
+</html>

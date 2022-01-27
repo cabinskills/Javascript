@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods 1</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    // 1. Array length
+    // 2. Array Map
+    // 3. forEach
+
+    let city = ["Chennai", "Madurai", "Trichy", "Kovai"];
+
+    // find the length of the city array
+    let len = city.length;
+    console.log(len);
+
+    // city.length can be used to find out 
+    // the number of times to loop over an array
+    for (i = 0; i < city.length; i++) {
+        console.log(city[i]);
+    }
+
+
+
+    let numbers = [2, 4, 6, 8, 10];
+
+    // function to return the square of a number
+    function square(number) {
+        return number * number;
+    }
+
+    // apply square() function to each item of the numbers list
+    // Note : map function does not change the original array.
+    let square_numbers = numbers.map(square);
+    console.log(square_numbers); // Output: [ 4, 16, 36, 64, 100 ]
+
+
+    let numbers2 = [1, 3, 4, 9, 8];
+
+    // function to compute square of each number
+    function computeSquare(element) {
+        console.log(element * element);
+    }
+
+    // compute square root of each element
+    // Note : forEach function does not change the original array.
+    numbers2.forEach(computeSquare);
+</script>
+
+</html>
